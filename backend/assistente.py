@@ -73,6 +73,15 @@ class Assistente:
             elif opcao == "2":
                 self.navegar()
             elif opcao == "3" or opcao == "0":
+                print("\nAntes de sair, qual a nota de facilidade de uso deste assistente (1 a 5)?")
+                while True:
+                    nota_str = input("Digite um valor de 1 a 5: ").strip()
+                    if nota_str.isdigit():
+                        nota = int(nota_str)
+                        if 1 <= nota <= 5:
+                            print(f"Obrigado pelo feedback! Nota registada: {nota}/5.")
+                            break
+                    print("Opção inválida. Por favor, digite um número inteiro entre 1 e 5.")
                 print("\nEncerrando atendimento. Até logo!")
                 break
             else:
@@ -83,7 +92,7 @@ class Assistente:
         print("\n--- Modo Pergunta (Digite '0' para voltar ao menu) ---")
         while True:
             inicio_tempo = time.time()
-            pergunta = input("\nDigite sua dúvida: [0 para voltar]").strip()
+            pergunta = input("\nDigite sua dúvida: ").strip()
             
             if pergunta == "0":
                 break

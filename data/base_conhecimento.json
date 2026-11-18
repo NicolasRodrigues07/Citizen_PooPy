@@ -10,7 +10,7 @@
         "resposta": "O hemograma é um exame de sangue rápido que avalia três partes principais: os glóbulos vermelhos (que transportam oxigênio e indicam anemia se estiverem baixos), os glóbulos brancos (células de defesa que aumentam em infecções) e as plaquetas (que ajudam na cicatrização e coagulação).",
         "documentos": ["Documento de Identificação", "Carteirinha de convênio( ou SUS)"],
         "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
+        "fonte": "http://189.28.128.100/dab/docs/portaldab/publicacoes/Protocolos_AB_vol8_hematologia.pdf",
         "verificado_em": "Última atualização em 11/11/2026",
         "detalhes": {
             "jejum": "Não é necessário jejum para esse exame, a menos que o seu médico tenha indicado"
@@ -22,15 +22,15 @@
         "categoria": "Exames",
         "titulo": "Endoscopia",
         "palavras_chave": [
-            "endoscopia", "eda"
+            "endoscopia", "eda", "esofago"
         ],
         "resposta": "A Endoscopia é um exame rápido usado para visualizar o revestimento interno do esôfago, estômago e duodeno (início do intestino delgado). Ele serve para investigar sintomas como azia, dor abdominal, náuseas ou sangramentos, diagnosticando problemas como gastrite, refluxo e úlceras.",
         "documentos": ["Documento de Identificação", "Carteirinha de convênio( ou SUS)", "Pedido médico"],
         "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
+        "fonte": "Dados encontrados no link https://www.gov.br/defesa/pt-br/assuntos/hfa/servicos-e-informacoes/clinicas/gastroenterologia-e-endoscopia-digestiva",
         "verificado_em": "Última atualização em 11/11/2026",
         "detalhes": {
-            "jejum": "Jejum absoluto de 8 horas antes do exame (inclui balas, chicletes e sucos com polpa)"
+            "jejum": "Jejum absoluto de no mínimo 8 horas antes do exame (inclui balas, chicletes e sucos com polpa)"
         }
         },
 
@@ -39,13 +39,13 @@
         "categoria": "Exames",
         "titulo": "Ultrassonografia",
         "palavras_chave": [
-            "ultrasson", "ecografia", "usg"
+            "ultrasson", "ecografia", "usg", "ultrassonografia"
         ],
         "resposta": "A ultrassonografia (ou ecografia) é um exame de imagem rápido e indolor que usa ondas sonoras (sem radiação) para gerar imagens em tempo real dos órgãos e tecidos internos do corpo, como fígado, rins, tireoide, coração ou um bebê durante a gravidez. O médico passa um gel na pele e desliza um pequeno aparelho (transdutor) sobre a região avaliada.",
 
         "documentos": ["Documento de Identificação", "Carteirinha de convênio( ou SUS)", "Pedido médico"],
         "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
+        "fonte": "https://www.cdb.com.br/especialidades/sao-paulo-sp/exames-de-imagem/ultrassonografia",
         "verificado_em": "Última atualização em 11/11/2026",
         "detalhes": {
             "jejum": "Exige jejum de 6 a 8 horas (para evitar gases e manter a vesícula cheia) e, frequentemente, bexiga cheia (beber de 4 a 6 copos de água 1 hora antes e não urinar)."
@@ -63,7 +63,7 @@
 
         "documentos": ["Documento de Identificação", "Carteirinha de convênio( ou SUS)", "Pedido médico"],
         "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
+        "fonte": "https://www.cdb.com.br/especialidades/sao-paulo-sp/exames-de-imagem/radiografia",
         "verificado_em": "Última atualização em 11/11/2026",
         "detalhes": {
             "jejum": "Não é necessário fazer jejum para a grande maioria dos raios-X (como tórax, coluna, braços, pernas ou dentes). A única exceção rara são exames contrastados específicos do sistema digestivo (como o trânsito intestinal)"
@@ -75,12 +75,12 @@
         "categoria": "Exames",
         "titulo": "Eletrocardiograma",
         "palavras_chave": [
-            "eletro", "ecg"
+            "eletro", "ecg", "eletrocardiograma"
         ],
         "resposta": "O eletrocardiograma é um exame rápido, simples e totalmente indolor que registra a atividade elétrica do coração através de pequenos adesivos (eletrodos) colados no peito, nos punhos e nos tornozelos. Ele dura cerca de 5 minutos e serve para avaliar o ritmo e a frequência dos batimentos, ajudando a detectar arritmias, sinais de infarto, sopros ou sobrecarga cardíaca.",
         "documentos": ["Documento de Identificação", "Carteirinha de convênio( ou SUS)", "Pedido médico"],
         "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
+        "fonte": "https://nav.dasa.com.br/blog/eletrocardiograma",
         "verificado_em": "Última atualização em 11/11/2026",
         "detalhes": {
             "jejum": "Não é necessário fazer jejum; você pode comer e beber normalmente antes do exame."
@@ -94,9 +94,9 @@
         "palavras_chave": [
             "dor de cabeça", "novalgina", "analgesico", "dipirona"
         ],
-        "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
-        "verificado_em": "Última atualização em 11/11/2026",
+        "onde": "Você pode encontrar este medicamento em drogarias próximas a você",
+        "fonte": "Dados encontrados no link: https://consultas.anvisa.gov.br/#/bulario/q/?nomeProduto=dipirona",
+        "verificado_em": "Última atualização em 18/11/2026",
         "detalhes": {
             "colaterais": "",
             "contraindicado": "Contraindicada para pessoas com alergia ao composto ou a outros analgésicos, problemas na medula óssea, doenças metabólicas raras (como porfiria ou deficiência de G6PD), bebês menores de 3 meses (ou abaixo de 5 kg) e gestantes nos primeiros e últimos três meses de gravidez.",
@@ -112,9 +112,9 @@
         "palavras_chave": [
             "anti-inflamatorio", "aine", "analgesico", "cimelide", "nimesulida"
         ],
-        "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
-        "verificado_em": "Última atualização em 11/11/2026",
+        "onde": "Você pode encontrar este medicamento em drogarias próximas a você",
+        "fonte": "Dados encontrados no link: https://consultas.anvisa.gov.br/#/bulario/q/?nomeProduto=nimesulida",
+        "verificado_em": "Última atualização em 18/11/2026",
         "detalhes": {
             "colaterais": "",
             "contraindicado": "Contraindicada para pessoas com alergia ao composto ou a outros anti-inflamatórios (como AAS, AINEs e ibuprofeno), pacientes com úlcera no estômago, sangramento gastrointestinal, problemas graves no fígado, rins ou coração, gestantes, mulheres em fase de amamentação e crianças menores de 12 anos.",
@@ -130,9 +130,9 @@
         "palavras_chave": [
             "antibiotico", "penicilina", "bacteria", "infeccao", "amoxicilina"
         ],
-        "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
-        "verificado_em": "Última atualização em 11/11/2026",
+        "onde": "Você pode encontrar este medicamento em drogarias próximas a você",
+        "fonte": "Dados encontrados no link: https://consultas.anvisa.gov.br/#/bulario/q/?nomeProduto=amoxicilina",
+        "verificado_em": "Última atualização em 18/11/2026",
         "detalhes": {
             "colaterais": "",
             "contraindicado": "É contraindicada para pessoas com alergia às penicilinas, cefalosporinas ou a qualquer componente da fórmula, devendo ser usada com cautela e orientação médica em pacientes com problemas renais graves, histórico de alergias severas ou mulheres grávidas e lactantes.",
@@ -148,9 +148,9 @@
         "palavras_chave": [
             "antialergico", "rinite", "alegra", "loratadina"
         ],
-        "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
-        "verificado_em": "Última atualização em 11/11/2026",
+        "onde": "Você pode encontrar este medicamento em drogarias próximas a você",
+        "fonte": "Dados encontrados no link: https://consultas.anvisa.gov.br/#/bulario/q/?nomeProduto=loratadina",
+        "verificado_em": "Última atualização em 18/11/2026",
         "detalhes": {
             "colaterais": "",
             "contraindicado": "Contraindicada para pessoas com alergia à loratadina ou a qualquer componente da fórmula, crianças menores de 2 anos, devendo ser usada apenas com orientação médica por gestantes, mulheres em fase de amamentação e pacientes com problemas graves no fígado.",
@@ -166,9 +166,9 @@
         "palavras_chave": [
             "gastrite", "refluxo", "estomago", "intestino", "omeprazol"
         ],
-        "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
-        "verificado_em": "Última atualização em 11/11/2026",
+        "onde": "Você pode encontrar este medicamento em drogarias próximas a você",
+        "fonte": "Dados encontrados no link: https://consultas.anvisa.gov.br/#/bulario/q/?nomeProduto=omeprazol",
+        "verificado_em": "Última atualização em 18/11/2026",
         "detalhes": {
             "colaterais": "",
             "contraindicado": "É contraindicado para pessoas com alergia ao omeprazol ou a outros medicamentos da mesma classe (como pantoprazol e esomeprazol), pacientes em tratamento com certos antirretrovirais (como atazanavir ou nelfinavir), devendo ser usado apenas sob orientação médica por gestantes, lactantes e pessoas com problemas graves no fígado.",
@@ -189,7 +189,7 @@
             "Carteirinha de convênio"
         ],
         "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
+        "fonte": "Dados encontrados em união a diversas pesquisas sobre exames",
         "verificado_em": "Última atualização em 11/11/2026"
         },
 
@@ -199,10 +199,10 @@
         "titulo": "Como descartar medicamentos vencidos?",
         "resposta": "Nunca jogue medicamentos vencidos ou sobras no lixo comum ou na pia/vaso sanitário, pois os compostos químicos contaminam o solo e a água. O descarte correto deve ser feito levando os produtos até postos de coleta especializados localizados em farmácias parceiras ou Unidades Básicas de Saúde (UBS).",
         "palavras_chave": [
-            "descarte", "medicamento vencido", "lixo", "farmacia", "ubs"
+            "descarte", "medicamento vencido", "lixo", "farmacia", "ubs", "descarto medicamento", "descartar"
         ],
-        "onde": "Locais de atendimento próximos a você...",
-        "fonte": "Dados encontrados no local...",
+        "onde": "UBSs, Drogarias ou locais especializados",
+        "fonte": "https://prefeitura.sp.gov.br/web/saude/w/vigilancia_em_saude/vigilancia_sanitaria/312129",
         "verificado_em": "Última atualização em 11/11/2026"
         },
 
@@ -214,8 +214,8 @@
         "palavras_chave": [
             "generico", "similar", "referencia", "marca", "farmacia", "diferenca de medicamentos"
         ],
-        "onde": "Balcão de atendimento das farmácias...",
-        "fonte": "Dados encontrados no local...",
+        "onde": "Balcão de atendimento das farmácias",
+        "fonte": "https://crfrs.org.br/noticias/voce.sabe.a.diferenca.entre.medicamento.referencia.generico.e.similar",
         "verificado_em": "Última atualização em 11/11/2026"
         },
 
@@ -231,7 +231,7 @@
             "Embalagem do medicamento",
             "Documento de Identificação"
         ],
-        "onde": "Pronto-socorro ou Unidade de Pronto Atendimento (UPA) mais próxima...",
+        "onde": "Pronto-socorro ou Unidade de Pronto Atendimento (UPA) mais próxima",
         "fonte": "Dados encontrados no local...",
         "verificado_em": "Última atualização em 11/11/2026"
         },
@@ -244,7 +244,7 @@
         "palavras_chave": [
             "validade", "antibiotico", "tarja preta", "receita medica", "quanto tempo vale a receita", "receita de remedio"
         ],
-        "onde": "Clínicas médicas e farmácias...",
+        "onde": "Clínicas médicas e farmácias.",
         "fonte": "Dados encontrados no local...",
         "verificado_em": "Última atualização em 11/11/2026"
         }
