@@ -1,3 +1,72 @@
-{
-    "atendimentos": []
-}
+[
+    {
+        "data": "2026-11-18 18:25:50",
+        "origem": "pergunta",
+        "pergunta": "C:\\Users\\nicol\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe c:/Users/nicol/OneDrive/Documentos/Faculdade/Citizen_Tech/main.py",
+        "id_orientacao": null,
+        "encontrou": false,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo": 2.5
+    },
+    {
+        "data": "2026-11-18 18:26:43",
+        "origem": "pergunta",
+        "pergunta": "exame de sangue",
+        "id_orientacao": 1,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo": 32.8
+    },
+    {
+        "data": "2026-11-18 18:27:46",
+        "origem": "pergunta",
+        "pergunta": "como eu marco um exame de sangue?",
+        "id_orientacao": 1,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo": 63.5
+    },
+    {
+        "data": "2026-11-18 18:33:11",
+        "origem": "pergunta",
+        "pergunta": "como eu faço para marcar exames?",
+        "id_orientacao": 11,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo": 319.1
+    },
+    {
+        "data": "2026-11-18 18:36:17",
+        "origem": "pergunta",
+        "pergunta": "como eu faço para marcar um exame",
+        "id_orientacao": 11,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo": 115.2
+    },
+    {
+        "data": "2026-11-18 18:36:39",
+        "origem": "pergunta",
+        "pergunta": "exame de sangue",
+        "id_orientacao": 1,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo": 21.8
+    },
+    {
+        "data": "2026-11-18 18:42:28",
+        "origem": "pergunta",
+        "pergunta": "exame de sangue",
+        "id_orientacao": 1,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo": 5.3
+    }
+]

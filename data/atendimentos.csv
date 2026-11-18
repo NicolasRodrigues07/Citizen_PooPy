@@ -1,0 +1,8 @@
+data,origem,pergunta,id_orientacao,encontrou,ajudou,tentativas,tempo
+2026-11-18 18:25:50,pergunta,C:\Users\nicol\AppData\Local\Python\pythoncore-3.14-64\python.exe c:/Users/nicol/OneDrive/Documentos/Faculdade/Citizen_Tech/main.py,,False,False,1,2.5
+2026-11-18 18:26:43,pergunta,exame de sangue,1,True,True,1,32.8
+2026-11-18 18:27:46,pergunta,como eu marco um exame de sangue?,1,True,True,1,63.5
+2026-11-18 18:33:11,pergunta,como eu faço para marcar exames?,11,True,True,1,319.1
+2026-11-18 18:36:17,pergunta,como eu faço para marcar um exame,11,True,True,1,115.2
+2026-11-18 18:36:39,pergunta,exame de sangue,1,True,True,1,21.8
+2026-11-18 18:42:28,pergunta,exame de sangue,1,True,True,1,5.3

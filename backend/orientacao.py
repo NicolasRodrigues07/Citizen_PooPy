@@ -24,17 +24,18 @@ class Orientacao:
         self.onde = onde
         self.fonte = fonte
         self.verificado_em = verificado_em
-        self.documentos = documentos if documentos is not None else []
-        self.detalhes = detalhes if detalhes is not None else {}
+        self.documentos = documentos if documentos is not None else None
+        self.detalhes = detalhes if detalhes is not None else None
 
-    def exibir(self): 
-        print(f"\n{self.titulo}")
-        print(self.resposta)
-        print(f"\nDocumentos necessários: {self.documentos}")
+    def exibir(self):
+        """Exibe os detalhes formatados da orientação no terminal."""
+        print(f">> {self.titulo} [{self.categoria}]")
+        print(f"{self.resposta}")
+        if self.documentos:
+            print("Documentos necessários:")
+            for doc in self.documentos:
+                print(f"  • {doc}")
         print(f"Onde: {self.onde}")
-        print(f"Fontes: {self.fonte}")
-        print(f"Verificado em: {self.verificado_em}")
-
-    def aviso():
-        return "Conteúdo apenas informativo. Não substituímos consultas, diagnósticos ou orientações médicas profissionais."
+        print(f"Fonte: {self.fonte} (verificado em {self.verificado_em})")
+        print("Conteúdo apenas informativo. Não substituímos consultas, diagnósticos ou orientações médicas profissionais.")
     

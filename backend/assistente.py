@@ -9,7 +9,6 @@ class Assistente:
         self.base = base_conhecimento
         self.historico = []
         
-        # Caminhos para arquivos de histórico e CSV
         diretorio_atual = os.path.dirname(os.path.abspath(__file__))
         self.caminho_historico = os.path.join(diretorio_atual, "..", "data", "historico.json")
         self.caminho_csv = os.path.join(diretorio_atual, "..", "data", "atendimentos.csv")
@@ -21,7 +20,11 @@ class Assistente:
         if os.path.exists(self.caminho_historico):
             try:
                 with open(self.caminho_historico, "r", encoding="utf-8") as f:
-                    self.historico = json.load(f)
+                    dados = json.load(f)
+                    if isinstance(dados, list):
+                        self.historico = [h for h in dados if isinstance(h, dict)]
+                    else:
+                        self.historico = []
             except Exception:
                 self.historico = []
 
@@ -36,7 +39,6 @@ class Assistente:
     def validar_dado_pessoal(self, texto):
         """
         Retorna True se encontrar indícios de dados pessoais (8+ dígitos seguidos ou '@').
-        Conforme a regra de segurança do projeto.
         """
         if "@" in texto:
             return True
@@ -54,23 +56,38 @@ class Assistente:
 
     def perguntar(self):
         """
-        Loop principal de atendimento ao cidadão no terminal.
+        Menu principal do assistente: escolhe entre Perguntar, Navegar ou Sair.
         """
         print(f"\n=== Olá! Eu sou o {self.nome} ===")
-        print("Digite sua dúvida ou '0' para ver as categorias / sair.")
 
         while True:
-            # Mede o tempo de atendimento
-            inicio_tempo = time.time()
+            print("\n--- Menu Principal ---")
+            print("[1] Fazer uma pergunta (Busca inteligente)")
+            print("[2] Navegar por categorias")
+            print("[3] Sair")
             
-            pergunta = input("\nDigite sua dúvida (0 para voltar/sair): ").strip()
+            opcao = input("Escolha uma opção: ").strip()
             
-            # Opção de saída ou navegação
-            if pergunta == "0":
+            if opcao == "1":
+                self._loop_perguntas()
+            elif opcao == "2":
+                self.navegar()
+            elif opcao == "3" or opcao == "0":
                 print("\nEncerrando atendimento. Até logo!")
                 break
+            else:
+                print("Opção inválida. Digite 1, 2 ou 3.")
+
+    def _loop_perguntas(self):
+        """Loop interno para perguntas em texto livre."""
+        print("\n--- Modo Pergunta (Digite '0' para voltar ao menu) ---")
+        while True:
+            inicio_tempo = time.time()
+            pergunta = input("\nDigite sua dúvida: [0 para voltar]").strip()
             
-            # Validação de dados pessoais (Segurança)
+            if pergunta == "0":
+                break
+            
             if self.validar_dado_pessoal(pergunta):
                 print("Atenção: não digite CPF, telefone ou e-mail. Reescreva.")
                 continue
@@ -79,7 +96,6 @@ class Assistente:
                 print("Por favor, digite uma pergunta válida.")
                 continue
 
-            # Realiza a busca na Base de Conhecimento
             resultados_pontuados = self.base.pontuar(pergunta)
             melhores_resultados = self.base.buscar(pergunta)
             
@@ -87,47 +103,32 @@ class Assistente:
             id_orientacao = None
             
             if encontrou:
-                # Pega a pontuação e a melhor orientação da primeira tupla
                 maior_pontos, melhor_orientacao = resultados_pontuados[0]
                 id_orientacao = melhor_orientacao.id
                 
-                # Define o nível de confiança[cite: 12]
-                if maior_pontos >= 6:
-                    confianca = "ALTA"
-                elif maior_pontos >= 3:
-                    confianca = "MÉDIA"
-                else:
-                    confianca = "BAIXA"
-                
+                confianca = "ALTA" if maior_pontos >= 6 else ("MÉDIA" if maior_pontos >= 3 else "BAIXA")
                 print(f"\nConfiança da resposta: {confianca} ({maior_pontos} pontos)")
                 
-                # Exibe a melhor orientação (usando o método exibir da classe Orientacao)
                 melhor_orientacao.exibir()
                 
-                # Exibe até duas alternativas secundárias se existirem[cite: 12, 14]
                 if len(resultados_pontuados) > 1:
                     print("\n--- Alternativas relacionadas ---")
                     for idx in range(1, min(3, len(resultados_pontuados))):
                         pts, alt = resultados_pontuados[idx]
                         print(f"• [{alt.categoria}] {alt.titulo} ({pts} pts)")
 
-                # Pergunta se ajudou (s/n) com tratamento de entrada inválida
                 ajudou_str = ""
                 while ajudou_str not in ["s", "n"]:
                     ajudou_str = input("\nEssa orientação respondeu sua dúvida? (s/n): ").lower().strip()
                     if ajudou_str not in ["s", "n"]:
-                        print("Opção inválida. Digite apenas 's' para sim ou 'n' para não.")
+                        print("Opção inválida. Digite apenas 's' ou 'n'.")
                 
-                ajudou = True if ajudou_str == 's' else False
+                ajudou = (ajudou_str == 's')
             else:
                 print("\nNão encontrei nenhuma orientação exata para sua dúvida.")
-                print("Sugestão: tente usar outras palavras-chave ou navegue pelas categorias digitando 'cat'.")
                 ajudou = False
 
-            # Calcula o tempo decorrido em segundos (arredondado a 1 casa decimal)
             tempo_decorrido = round(time.time() - inicio_tempo, 1)
-
-            # Registra o atendimento no histórico
             self.registrar(
                 origem="pergunta",
                 pergunta=pergunta,
@@ -137,6 +138,67 @@ class Assistente:
                 tentativas=1,
                 tempo=tempo_decorrido
             )
+
+    def navegar(self):
+        """
+        Permite navegar por categorias, listar orientações e ver detalhes específicos.
+        Cumpre a regra do '0 para voltar' em todas as telas.
+        """
+        while True:
+            categorias = self.base.categorias()
+            print("\n=== Navegação por Categorias ===")
+            print("[0] Voltar ao menu principal")
+            for idx, cat in enumerate(categorias, 1):
+                print(f"[{idx}] {cat}")
+            
+            escolha_cat = input("\nEscolha o número da categoria (ou 0 para voltar): ").strip()
+            
+            if escolha_cat == "0":
+                break
+            
+            if escolha_cat.isdigit():
+                num_cat = int(escolha_cat)
+                if 1 <= num_cat <= len(categorias):
+                    cat_escolhida = categorias[num_cat - 1]
+                    
+                    while True:
+                        orientacoes_cat = self.base.por_categoria(cat_escolhida)
+                        print(f"\n--- Orientações em [{cat_escolhida}] ---")
+                        print("[0] Voltar às categorias")
+                        for o_idx, orient in enumerate(orientacoes_cat, 1):
+                            print(f"[{o_idx}] {orient.titulo}")
+                        
+                        escolha_ori = input("\nEscolha o número da orientação (ou 0 para voltar): ").strip()
+                        
+                        if escolha_ori == "0":
+                            break
+                        
+                        if escolha_ori.isdigit():
+                            num_ori = int(escolha_ori)
+                            if 1 <= num_ori <= len(orientacoes_cat):
+                                orient_selecionada = orientacoes_cat[num_ori - 1]
+                                
+                                print("\n" + "="*40)
+                                orient_selecionada.exibir()
+                                
+                                if hasattr(orient_selecionada, 'detalhes') and orient_selecionada.detalhes:
+                                    print("\n--- Informações Adicionais / Detalhes ---")
+                                    if isinstance(orient_selecionada.detalhes, dict):
+                                        for chave, valor in orient_selecionada.detalhes.items():
+                                            print(f"• {chave.capitalize()}: {valor}")
+                                    else:
+                                        print(f"• {orient_selecionada.detalhes}")
+                                print("="*40)
+                                
+                                input("\nPressione Enter para continuar...")
+                            else:
+                                print("Número da orientação inválido.")
+                        else:
+                            print("Entrada inválida. Digite um número.")
+                else:
+                    print("Número da categoria inválido.")
+            else:
+                print("Entrada inválida. Digite um número.")
 
     def registrar(self, origem, pergunta, id_orientacao, encontrou, ajudou, tentativas, tempo):
         """Registra o atendimento na lista de histórico e guarda no JSON."""
@@ -155,7 +217,7 @@ class Assistente:
         self.exportar_csv()
 
     def exportar_csv(self):
-        """Exporta todos os atendimentos para um arquivo CSV usando DictWriter[cite: 13]."""
+        """Exporta todos os atendimentos para um arquivo CSV usando DictWriter."""
         if not self.historico:
             return
         
@@ -169,7 +231,7 @@ class Assistente:
             print(f"Erro ao exportar CSV: {e}")
 
     def indicadores(self):
-        """Calcula e exibe os indicadores de desempenho exigidos[cite: 13]."""
+        """Calcula e exibe os indicadores de desempenho exigidos."""
         total = len(self.historico)
         if total == 0:
             print("\nNenhum atendimento registado ainda.")

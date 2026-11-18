@@ -1,6 +1,6 @@
 import json
 import os
-from orientacao import Orientacao
+from .orientacao import Orientacao
 
 class BaseConhecimento:
 
@@ -173,22 +173,3 @@ class BaseConhecimento:
             melhores_resultados.append(orientacao)
             
         return melhores_resultados
-
-
-
-if __name__ == "__main__":
-    # Supondo que você salve sua classe como BaseConhecimento e tenha um arquivo .json
-    base = BaseConhecimento()
-    base.carregar()
-    
-    # Testa uma pergunta livre
-    pergunta_teste = "Como faço para agendar meus exames médicos?"
-    print(f"\nBuscando por: '{pergunta_teste}'")
-    
-    resultados = base.buscar(pergunta_teste)
-    
-    for idx, orientacao in enumerate(resultados, 1):
-        print(f"\n--- Resultado {idx} ---")
-        print(f"Título: {orientacao.titulo}")
-        print(f"Categoria: {orientacao.categoria}")
-        print(f"Resposta: {orientacao.resposta}")
