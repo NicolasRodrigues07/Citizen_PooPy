@@ -1,18 +1,18 @@
 # Citizen Assist AI: Assistente Digital de Orientação ao Cidadão
 
-Projeto desenvolvido para a Global Solution 2026.2 da disciplina de **Pensamento Computacional e Automação com Python**.
+Projeto desenvolvido para a GS da disciplina de **Pensamento Computacional e Automação com Python**.
 
 ## Integrantes
 * **Nícolas Andrade Rodrigues** – RM: 572782
 * **Lucas Caram Bueno** - RM: 570158
 
 ## Público-Alvo e Problema Escolhido
-* **Público-alvo:** Cidadãos em geral que buscam informações rápidas, claras e confiáveis sobre exames médicos, medicamentos comuns e procedimentos básicos de saúde[cite: 3].
-* **Problema:** Muitas pessoas enfrentam dificuldades para compreender preparos de exames (como tempo de jejum), regras de prescrição de medicamentos e procedimentos básicos de atendimento[cite: 3]. As informações frequentemente encontram-se dispersas em linguagem técnica ou em sites não oficiais, gerando dúvidas e insegurança no cidadão[cite: 3].
-* **Solução:** Um assistente digital executado via terminal que centraliza orientações verificadas em fontes oficiais (Ministério da Saúde, ANVISA e sociedades médicas), apresentando os documentos necessários, locais de atendimento e avisos de responsabilidade médica, sem recolher qualquer dado pessoal do utilizador[cite: 3, 6].
+* **Público-alvo:** Cidadãos em geral que buscam informações rápidas, claras e confiáveis sobre exames médicos, medicamentos comuns e procedimentos básicos de saúde.
+* **Problema:** Muitas pessoas enfrentam dificuldades para compreender preparos de exames (como tempo de jejum), regras de prescrição de medicamentos e procedimentos básicos de atendimento. As informações frequentemente encontram-se dispersas em linguagem técnica ou em sites não oficiais, gerando dúvidas e insegurança no cidadão.
+* **Solução:** Um assistente digital executado via terminal que centraliza orientações verificadas em fontes oficiais (Ministério da Saúde, ANVISA e sociedades médicas), apresentando os documentos necessários, locais de atendimento e avisos de responsabilidade médica, sem recolher qualquer dado pessoal do utilizador.
 
 ##  ODS Relacionados
-* **ODS 3 – Saúde e Bem-Estar:** Assegurar uma vida saudável e promover o bem-estar para todos, facilitando o acesso à informação clara e segura sobre medicamentos e exames preventivos.
+* **ODS 3 – Saúde e Bem-Estar:** Assegurar uma vida saudável e promover o bem-estar para todos, facilitando o acesso à informação clara e segura sobre medicamentos e exames preventivos. O nosso projeto é uma pequena ajuda para resolver  objetivos da ONU.
 * **ODS 16 – Paz, Justiça e Instituições Eficazes:** Desenvolver instituições eficazes, responsáveis e transparentes, garantindo o acesso público à informação oficial de saúde.
 
 ##  Estrutura do Repositório
@@ -34,15 +34,8 @@ citizen-assist-ai/
 ## Como Executar o Projeto
 
 2. Clone este repositório ou descarregue os ficheiros para o seu computador.
-3. No terminal, navegue até à pasta raiz do projeto (`citizen-assist-ai/`).
-4. Execute o comando principal:
-
-
-```bash
-python main.py
-
-```
-
+3. No VSCode, navegue até o arquivo principal do projeto (`main.py`).
+4. Execute o arquivo
 
 *(Nenhuma biblioteca externa precisa ser instalada; o projeto utiliza apenas módulos nativos do Python como `json`, `os`, `csv` e `time`).*
 
@@ -53,7 +46,7 @@ O sistema foi estruturado utilizando Programação Orientada a Objetos com três
 * **`Orientacao`**: Representa cada registo individual da base de conhecimento e realiza a formatação da saída no terminal.
 
 
-* **`BaseConhecimento`**: Carrega os dados do arquivo JSON, normaliza os textos (removendo acentos, pontuações e convertendo para minúsculas), ordena as categorias utilizando *Selection Sort* e calcula a pontuação de relevância.
+* **`BaseConhecimento`**: Carrega os dados do arquivo JSON, normaliza os textos (removendo acentos, pontuações e convertendo para minúsculas), ordena as categorias utilizando *Selection Sort*(apenas em função de treinamento) e calcula a pontuação de relevância.
 
 
 * **`Assistente`**: Gerencia o menu interativo, valida e bloqueia dados pessoais (CPFs, telefones ou e-mails), regista o histórico em JSON, exporta relatórios para CSV e calcula os indicadores de desempenho.
@@ -97,24 +90,21 @@ Todas as 15 orientações da base de conhecimento foram verificadas em portais i
 
 ## Resultado dos Testes com Usuários
 
-O sistema foi testado com **[X] usuários externos** (fora da equipe), totalizando **[Y] atendimentos** registrados no terminal:
+O sistema foi testado com **[4] usuários externos** (familiares da equipe), totalizando **[14] atendimentos** registrados no terminal:
 
-* **Taxa de resposta encontrada:** [XX,X]%
-
-
-* **Taxa de acerto (ajudou):** [XX,X]%
+* **Taxa de resposta encontrada:** [92.9%]%
 
 
-* **Tempo médio por atendimento:** [X,X] segundos
+* **Taxa de acerto (ajudou):** [71.4%]%
 
 
-* **Nota média de facilidade de uso (1 a 5):** [X,X] / 5,0
+* **Tempo médio por atendimento:** [169.56428571428572s] segundos
 
 
-* **Dúvidas sem solução observadas:** *[Ex: Perguntas sobre "dor de estômago forte" ou "remédio para gripe"]*
+* **Dúvidas sem solução observadas:** Perguntas sobre partes especificas de exames; Variações de exames que não se encontram nas bases de dados; Informações não encontradas por falta de palavras chaves
 
 
-* **Melhoria aplicada após os testes:** *[Ex: Adição de novas palavras-chave sinónimas nas orientações de Omeprazol e Amoxicilina para ampliar a cobertura de termos populares]*.
+* **Melhoria aplicada após os testes:** Adição de novas palavras-chave sinónimas nas orientações para ampliar a cobertura de termos populares.
 
 
 
@@ -123,7 +113,7 @@ O sistema foi testado com **[X] usuários externos** (fora da equipe), totalizan
 * **Base de conhecimento estática:** O assistente responde estritamente com base nos 15 registros cadastrados no arquivo `data/base_conhecimento.json`, não realizando buscas na internet em tempo real.
 
 
-* **Busca léxica por regras:** Como utiliza correspondência exata de radicais/palavras normalizadas em vez de modelos de linguagem generativos, erros graves de digitação ou sinónimos muito distantes das palavras-chave cadastradas podem resultar em baixa pontuação.
+* **Busca por regras:** Como utiliza correspondência exata de radicais/palavras normalizadas em vez de modelos de linguagem generativos, erros graves de digitação ou sinónimos muito distantes das palavras-chave cadastradas podem resultar em baixa pontuação.
 * **Caráter exclusivamente informativo:** O sistema não substitui consultas, diagnósticos ou prescrições médicas profissionais.
 
 ## 🎥 Vídeo Técnico
