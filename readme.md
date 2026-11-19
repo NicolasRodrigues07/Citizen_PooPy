@@ -1,15 +1,12 @@
-Aqui está um modelo completo e estruturado do `README.md`, seguindo exatamente todos os tópicos obrigatórios solicitados na documentação da Global Solution. Basta copiares o conteúdo abaixo para o ficheiro `README.md` na raiz do teu repositório e preencheres os campos entre colchetes (`[...]`) com os dados finais da tua equipa, dos testes e o link do vídeo.
-
-```markdown
 # Citizen Assist AI: Assistente Digital de Orientação ao Cidadão
 
 Projeto desenvolvido para a Global Solution 2026.2 da disciplina de **Pensamento Computacional e Automação com Python**.
 
-## 👥 Integrantes
+## Integrantes
 * **Nícolas Andrade Rodrigues** – RM: 572782
-***Lucas Caram Bueno** - RM: 570158
+* **Lucas Caram Bueno** - RM: 570158
 
-## 🎯 Público-Alvo e Problema Escolhido
+## Público-Alvo e Problema Escolhido
 * **Público-alvo:** Cidadãos em geral que buscam informações rápidas, claras e confiáveis sobre exames médicos, medicamentos comuns e procedimentos básicos de saúde[cite: 3].
 * **Problema:** Muitas pessoas enfrentam dificuldades para compreender preparos de exames (como tempo de jejum), regras de prescrição de medicamentos e procedimentos básicos de atendimento[cite: 3]. As informações frequentemente encontram-se dispersas em linguagem técnica ou em sites não oficiais, gerando dúvidas e insegurança no cidadão[cite: 3].
 * **Solução:** Um assistente digital executado via terminal que centraliza orientações verificadas em fontes oficiais (Ministério da Saúde, ANVISA e sociedades médicas), apresentando os documentos necessários, locais de atendimento e avisos de responsabilidade médica, sem recolher qualquer dado pessoal do utilizador[cite: 3, 6].
@@ -131,10 +128,4 @@ O sistema foi testado com **[X] usuários externos** (fora da equipe), totalizan
 
 ## 🎥 Vídeo Técnico
 
-* **Link da demonstração no YouTube:** [INSERIR AQUI O LINK DO VÍDEO NÃO LISTADO]
-
-
-
-```
-
-```
+* **Link da demonstração no YouTube:** 
